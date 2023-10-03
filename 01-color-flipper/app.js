@@ -11,6 +11,7 @@ button.addEventListener("click", function () {
   color.textContent = colors[randomNumber];
 });
 
+// Math.floor used to round down the given random number
 function getRandomNumber() {
   return Math.floor(Math.random() * colors.length);
 }
