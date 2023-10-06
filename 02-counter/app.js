@@ -8,5 +8,16 @@ const btns = document.querySelectorAll(".btn");
 // Looping through the buttons
 btns.forEach(function (button) {
   // Add EventListener and check which  button is being selected
-  button.addEventListener("click", function (e) {});
+  button.addEventListener("click", function (e) {
+    const styles = e.currentTarget.classList;
+
+    if (styles.contains("decrease")) {
+      count--;
+    } else if (styles.contains("increase")) {
+      count++;
+    } else {
+      count = 0;
+    }
+    value.textContent = count;
+  });
 });
