@@ -57,7 +57,15 @@ function showPerson(person) {
   info.textContent = item.text;
 }
 // show next person
+nextBtn.addEventListener("click", function () {
+  currentItem++;
+  showPerson(currentItem);
+});
 
 // show prev person
+prevBtn.addEventListener("click", function () {
+  currentItem--;
+  showPerson(currentItem);
+});
 
 // show random person
