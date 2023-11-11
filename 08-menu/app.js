@@ -83,7 +83,6 @@ const menu = [
 
 let sectionCenter = document.querySelector(".section-center");
 const container = document.querySelector(".btn-container");
-const filterBtns = document.querySelectorAll(".filter-btn");
 
 // load items
 window.addEventListener("DOMContentLoaded", function () {
@@ -102,28 +101,29 @@ window.addEventListener("DOMContentLoaded", function () {
   const categoryButton = categories
     .map(function (category) {
       return `<button class="filter-btn" type="button" data-id=${category}>
-      ${category}
+    ${category}
     </button>`;
     })
     .join("");
   container.innerHTML = categoryButton;
-});
+  const filterBtns = document.querySelectorAll(".filter-btn");
 
-// filter items
-filterBtns.forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    const category = e.currentTarget.dataset.id;
-    const menuCategory = menu.filter(function (menuItem) {
-      if (menuItem.category === category) {
-        return menuItem;
+  // filter items
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter(function (menuItem) {
+        if (menuItem.category === category) {
+          return menuItem;
+        }
+      });
+      // console.log(menuCategory);
+      if (category === "all") {
+        displayMenuItems(menu);
+      } else {
+        displayMenuItems(menuCategory);
       }
     });
-    // console.log(menuCategory);
-    if (category === "all") {
-      displayMenuItems(menu);
-    } else {
-      displayMenuItems(menuCategory);
-    }
   });
 });
 
