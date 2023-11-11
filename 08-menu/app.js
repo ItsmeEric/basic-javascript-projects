@@ -98,7 +98,13 @@ window.addEventListener("DOMContentLoaded", function () {
     },
     ["all"]
   );
-  console.log(categories);
+  const categoryButton = categories
+    .map(function (category) {
+      return `<button class="filter-btn" type="button" data-id=${category}>
+      ${category}
+    </button>`;
+    })
+    .join("");
 });
 
 // filter items
