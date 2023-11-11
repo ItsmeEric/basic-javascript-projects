@@ -71,6 +71,14 @@ const menu = [
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: "steak dinner",
+    category: "dinner",
+    price: 36.99,
+    img: "./images/item-10.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
 ];
 
 let sectionCenter = document.querySelector(".section-center");
@@ -79,6 +87,18 @@ const filterBtns = document.querySelectorAll(".filter-btn");
 // load items
 window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menu);
+
+  // Get only unique categories - HARDEST ONE
+  const categories = menu.reduce(
+    function (values, item) {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ["all"]
+  );
+  console.log(categories);
 });
 
 // filter items
