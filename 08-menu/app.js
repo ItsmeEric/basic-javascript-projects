@@ -74,9 +74,24 @@ const menu = [
 ];
 
 let sectionCenter = document.querySelector(".section-center");
+const filterBtns = document.querySelectorAll(".filter-btn");
 
+// load items
 window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menu);
+});
+
+// filter items
+filterBtns.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    const category = e.currentTarget.dataset.id;
+    const menuCategory = menu.filter(function (menuItem) {
+      if (menuItem === category) {
+        return menuItem;
+      }
+    });
+    console.log(menuCategory);
+  });
 });
 
 function displayMenuItems(menuItems) {
