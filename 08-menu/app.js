@@ -87,7 +87,26 @@ const container = document.querySelector(".btn-container");
 // load items
 window.addEventListener("DOMContentLoaded", function () {
   displayMenuItems(menu);
+  displayMenuButtons();
+});
 
+function displayMenuItems(menuItems) {
+  let displayMenu = menuItems.map(function (item) {
+    return `<article class="menu-item">
+        <img src=${item.img} class="photo" alt=${item.title} />
+        <div class="item-info">
+          <header>
+            <h4>${item.title}</h4>
+            <h4 class="price">$${item.price}</h4>
+          </header>
+          <p class="item-text">${item.desc}</div>
+      </article>`;
+  });
+  displayMenu = displayMenu.join("");
+  sectionCenter.innerHTML = displayMenu;
+}
+
+function displayMenuButtons() {
   // Get only unique categories - HARDEST ONE
   const categories = menu.reduce(
     function (values, item) {
@@ -101,12 +120,12 @@ window.addEventListener("DOMContentLoaded", function () {
   const categoryButton = categories
     .map(function (category) {
       return `<button class="filter-btn" type="button" data-id=${category}>
-    ${category}
-    </button>`;
+      ${category}
+      </button>`;
     })
     .join("");
   container.innerHTML = categoryButton;
-  const filterBtns = document.querySelectorAll(".filter-btn");
+  const filterBtns = container.querySelectorAll(".filter-btn");
 
   // filter items
   filterBtns.forEach(function (btn) {
@@ -125,20 +144,4 @@ window.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-});
-
-function displayMenuItems(menuItems) {
-  let displayMenu = menuItems.map(function (item) {
-    return `<article class="menu-item">
-        <img src=${item.img} class="photo" alt=${item.title} />
-        <div class="item-info">
-          <header>
-            <h4>${item.title}</h4>
-            <h4 class="price">$${item.price}</h4>
-          </header>
-          <p class="item-text">${item.desc}</div>
-      </article>`;
-  });
-  displayMenu = displayMenu.join("");
-  sectionCenter.innerHTML = displayMenu;
 }
