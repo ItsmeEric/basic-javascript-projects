@@ -37,6 +37,15 @@ window.addEventListener("scroll", function () {
   } else {
     navbar.classList.remove("fixed-nav");
   }
+
+  // ********* scroll to top ************
+
+  if (scrollHeight > 900) {
+    topLink.classList.add("show-link");
+  } else {
+    topLink.classList.remove("show-link");
+  }
 });
+
 // ********** smooth scroll ************
 // select links
