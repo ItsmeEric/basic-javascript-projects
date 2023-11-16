@@ -66,7 +66,7 @@ scrollLinks.forEach(function (link) {
     let position = element.offsetTop - navHeight;
 
     if (!fixedNav) {
-      postion = position - navHeight;
+      position = position - navHeight;
     }
     if (navHeight > 82) {
       position = position + containerHeight;
