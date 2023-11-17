@@ -9,6 +9,7 @@ about.addEventListener("click", function (e) {
     // remove active from buttons
     btns.forEach(function (btn) {
       btn.classList.remove("active");
+      e.target.classList.add("active");
     });
   }
 });
