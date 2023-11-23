@@ -23,12 +23,11 @@ function addItem(e) {
   const value = grocery.value;
   const id = new Date().getTime().toString();
 
-  if (value !== "" && editFlag === false) {
+  if (value && !editFlag) {
     console.log("Add item to the list...");
-  } else if (value !== "" && editFlag === true) {
+  } else if (value && editFlag) {
     console.log("editing");
   } else {
-    console.log("empty value");
   }
 }
 
