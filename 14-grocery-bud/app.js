@@ -18,7 +18,6 @@ form.addEventListener("submit", addItem);
 // clear items
 clearBtn.addEventListener("click", clearItems);
 
-const deleteBtn = document.querySelector(".delete-btn");
 // ****** FUNCTIONS **********
 function addItem(e) {
   // prevent form from sending submission
@@ -43,6 +42,10 @@ function addItem(e) {
         <i class="fas fa-trash"></i>
       </button>
     </div>`;
+    const deleteBtn = element.querySelector(".delete-btn");
+    const editBtn = element.querySelector(".edit-btn");
+    deleteBtn.addEventListener("click", deleteItem);
+    editBtn.addEventListener("click", editItem);
     // append child
     list.appendChild(element);
     // display alert
@@ -84,6 +87,14 @@ function clearItems() {
   displayAlert("empty list", "danger");
   setBackToDefault();
   // localStorage.removeItem("list");
+}
+// delete function
+function deleteItem() {
+  console.log("item deleted");
+}
+// edit function
+function editItem() {
+  console.log("item deleted");
 }
 // set back to default
 function setBackToDefault() {
