@@ -17,6 +17,8 @@ let editID = "";
 form.addEventListener("submit", addItem);
 // clear items
 clearBtn.addEventListener("click", clearItems);
+
+const deleteBtn = document.querySelector(".delete-btn");
 // ****** FUNCTIONS **********
 function addItem(e) {
   // prevent form from sending submission
@@ -80,6 +82,8 @@ function clearItems() {
   }
   container.classList.remove("show-container");
   displayAlert("empty list", "danger");
+  setBackToDefault();
+  // localStorage.removeItem("list");
 }
 // set back to default
 function setBackToDefault() {
