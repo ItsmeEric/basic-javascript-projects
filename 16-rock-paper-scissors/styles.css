@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #24272e;
+  background-color: #292c34;
 }
 
 header {
@@ -31,6 +31,7 @@ header > h1 {
   text-align: center;
   padding: 15px 20px;
   font-family: Asap, sans-serif;
+  position: relative;
 }
 
 .badge {
@@ -38,5 +39,28 @@ header > h1 {
   color: #fff;
   font-size: 14px;
   padding: 2px 10px;
+  font-family: Asap, sans-serif;
+}
+
+#user-label {
+  position: absolute;
+  top: 27px;
+  left: -25px;
+}
+
+#system-label {
+  position: absolute;
+  top: 27px;
+  right: -32px;
+}
+
+.result {
+  font-size: 40px;
+  color: #fff;
+}
+
+.result > p {
+  text-align: center;
+  font-weight: 700;
   font-family: Asap, sans-serif;
 }
