@@ -32,3 +32,11 @@ header > h1 {
   padding: 15px 20px;
   font-family: Asap, sans-serif;
 }
+
+.badge {
+  background: #e25840;
+  color: #fff;
+  font-size: 14px;
+  padding: 2px 10px;
+  font-family: Asap, sans-serif;
+}
