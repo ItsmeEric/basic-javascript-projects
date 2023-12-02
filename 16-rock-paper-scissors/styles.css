@@ -64,3 +64,18 @@ header > h1 {
   font-weight: 700;
   font-family: Asap, sans-serif;
 }
+
+// images
+.choices {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.choice {
+  display: inline-block;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
