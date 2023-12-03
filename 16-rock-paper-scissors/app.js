@@ -17,6 +17,24 @@ function getSystemChoice() {
 
 function game(userChoice) {
   const systemChoice = getSystemChoice();
+
+  switch (userChoice + systemChoice) {
+    case "rockrock":
+    case "paperpaper":
+    case "scissorsscissors":
+      draw();
+      break;
+    case "rockscissors":
+    case "scissorspaper":
+    case "paperrock":
+      win();
+      break;
+    case "scissorsrock":
+    case "rockpaper":
+    case "paperscissors":
+      lose();
+      break;
+  }
 }
 
 function main() {
