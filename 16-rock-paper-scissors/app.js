@@ -1,10 +1,10 @@
-const userInitialScore = 0;
-const systemInitialScore = 0;
+let userInitialScore = 0;
+let systemInitialScore = 0;
 
 const userScore = document.getElementById("user-score");
 const systemScore = document.getElementById("system-score");
 const scoreBoard = document.querySelector(".score-board");
-const result = document.querySelector(".result");
+const result = document.querySelector(".result > p");
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
@@ -15,6 +15,19 @@ function getSystemChoice() {
   return choices[randomNumber];
 }
 
+function win(user, system) {
+  userInitialScore++;
+  userScore.innerHTML = userInitialScore;
+  systemScore.innerHTML = systemInitialScore;
+  result.innerHTML = `${user.toLocaleUpperCase()} beats ${system.toLocaleUpperCase()}. You WIN!`;
+}
+
+function lose() {
+  //   systemInitialScore++;
+}
+
+function draw() {}
+
 function game(userChoice) {
   const systemChoice = getSystemChoice();
 
@@ -22,17 +35,17 @@ function game(userChoice) {
     case "rockrock":
     case "paperpaper":
     case "scissorsscissors":
-      draw();
+      draw(userChoice, systemChoice);
       break;
     case "rockscissors":
     case "scissorspaper":
     case "paperrock":
-      win();
+      win(userChoice, systemChoice);
       break;
     case "scissorsrock":
     case "rockpaper":
     case "paperscissors":
-      lose();
+      lose(userChoice, systemChoice);
       break;
   }
 }
