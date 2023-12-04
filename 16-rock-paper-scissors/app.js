@@ -15,11 +15,11 @@ function getSystemChoice() {
   return choices[randomNumber];
 }
 
-function win(user, system) {
+function win(userChoice, systemChoice) {
   userInitialScore++;
   userScore.innerHTML = userInitialScore;
   systemScore.innerHTML = systemInitialScore;
-  result.innerHTML = `${user.toLocaleUpperCase()} beats ${system.toLocaleUpperCase()}. You WIN!`;
+  result.innerHTML = `${userChoice.toLocaleUpperCase()} beats ${systemChoice.toLocaleUpperCase()}. You WIN!`;
 }
 
 function lose() {
