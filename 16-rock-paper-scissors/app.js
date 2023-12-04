@@ -22,11 +22,18 @@ function win(userChoice, systemChoice) {
   result.innerHTML = `${userChoice.toLocaleUpperCase()} beats ${systemChoice.toLocaleUpperCase()}. You WIN!`;
 }
 
-function lose() {
-  //   systemInitialScore++;
+function lose(userChoice, systemChoice) {
+  systemInitialScore++;
+  userScore.innerHTML = userInitialScore;
+  systemScore.innerHTML = systemInitialScore;
+  result.innerHTML = `${userChoice.toLocaleUpperCase()} loses to ${systemChoice.toLocaleUpperCase()}. You LOST!`;
 }
 
-function draw() {}
+function draw(userChoice, systemChoice) {
+  userScore.innerHTML = userInitialScore;
+  systemScore.innerHTML = systemInitialScore;
+  result.innerHTML = `${userChoice.toLocaleUpperCase()} can't beat ${systemChoice.toLocaleUpperCase()}. It's a DRAW!`;
+}
 
 function game(userChoice) {
   const systemChoice = getSystemChoice();
