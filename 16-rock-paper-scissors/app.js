@@ -20,6 +20,10 @@ function win(userChoice, systemChoice) {
   userScore.innerHTML = userInitialScore;
   systemScore.innerHTML = systemInitialScore;
   result.innerHTML = `${userChoice.toLocaleUpperCase()} beats ${systemChoice.toLocaleUpperCase()}. You WIN!`;
+  document.getElementById(userChoice).classList.add("green-glow");
+  setTimeout(function () {
+    document.getElementById(userChoice).classList.remove("green-glow");
+  }, 400);
 }
 
 function lose(userChoice, systemChoice) {
