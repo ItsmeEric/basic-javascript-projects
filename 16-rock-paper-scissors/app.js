@@ -31,12 +31,22 @@ function lose(userChoice, systemChoice) {
   userScore.innerHTML = userInitialScore;
   systemScore.innerHTML = systemInitialScore;
   result.innerHTML = `${userChoice.toLocaleUpperCase()} loses to ${systemChoice.toLocaleUpperCase()}. You LOST!`;
+  document.getElementById(userChoice).classList.add("red-glow");
+  setTimeout(
+    () => document.getElementById(userChoice).classList.remove("red-glow"),
+    400
+  );
 }
 
 function draw(userChoice, systemChoice) {
   userScore.innerHTML = userInitialScore;
   systemScore.innerHTML = systemInitialScore;
   result.innerHTML = `${userChoice.toLocaleUpperCase()} can't beat ${systemChoice.toLocaleUpperCase()}. It's a DRAW!`;
+  document.getElementById(userChoice).classList.add("gray-glow");
+  setTimeout(
+    () => document.getElementById(userChoice).classList.remove("gray-glow"),
+    400
+  );
 }
 
 function game(userChoice) {
