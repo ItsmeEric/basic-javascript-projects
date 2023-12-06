@@ -44,3 +44,14 @@ startButton.addEventListener("click", function (event) {
     play();
   }
 });
+
+function play() {
+  win = false;
+  order = [];
+  playerOrder = [];
+  flash = 0;
+  intervalId = 0;
+  turn = 1;
+  turnCounter.innerHTML = 1;
+  good = true;
+}
