@@ -119,7 +119,7 @@ function four() {
 }
 
 function clearColor() {
-  topLeft.style.backgroundColor = "darkcolor";
+  topLeft.style.backgroundColor = "darkgreen";
   topRight.style.backgroundColor = "darkred";
   bottomLeft.style.backgroundColor = "goldenrod";
   bottomRight.style.backgroundColor = "darkblue";
