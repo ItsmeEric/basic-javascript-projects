@@ -54,4 +54,11 @@ function play() {
   turn = 1;
   turnCounter.innerHTML = 1;
   good = true;
+
+  for (let i = 0; i < 20; i++) {
+    order.push(Math.floor(Math.random() * 4) + 1);
+  }
+  computerTurn = true;
+
+  intervalId = setInterval(gameTurn, 800);
 }
