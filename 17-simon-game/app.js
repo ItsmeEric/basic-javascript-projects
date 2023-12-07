@@ -124,3 +124,16 @@ function clearColor() {
   bottomLeft.style.backgroundColor = "goldenrod";
   bottomRight.style.backgroundColor = "darkblue";
 }
+
+topLeft.addEventListener("click", function (event) {
+  if (on) {
+    playerOrder.push(1);
+    check();
+    one();
+    if (!win) {
+      setTimeout(function () {
+        clearColor();
+      }, 300);
+    }
+  }
+});
