@@ -62,3 +62,25 @@ function play() {
 
   intervalId = setInterval(gameTurn, 800);
 }
+
+function gameTurn() {
+  on = false;
+
+  if (flash === turn) {
+    clearInterval(intervalId);
+    computerTurn = false;
+    clearColor();
+    on = true;
+  }
+
+  if (computerTurn) {
+    clearColor();
+    setTimeout(function () {
+      if (order[flash] === 1) one();
+      if (order[flash] === 2) two();
+      if (order[flash] === 3) three();
+      if (order[flash] === 4) four();
+      flash++;
+    }, 200);
+  }
+}
