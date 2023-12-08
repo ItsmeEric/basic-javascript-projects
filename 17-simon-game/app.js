@@ -132,16 +132,20 @@ function flashColor() {
   bottomRight.style.backgroundColor = "lightskyblue";
 }
 
+function timeOut() {
+  if (!win) {
+    setTimeout(function () {
+      clearColor();
+    }, 300);
+  }
+}
+
 topLeft.addEventListener("click", function (event) {
   if (on) {
     playerOrder.push(1);
     check();
     one();
-    if (!win) {
-      setTimeout(function () {
-        clearColor();
-      }, 300);
-    }
+    timeOut();
   }
 });
 
@@ -150,11 +154,7 @@ topRight.addEventListener("click", function (event) {
     playerOrder.push(2);
     check();
     two();
-    if (!win) {
-      setTimeout(function () {
-        clearColor();
-      }, 300);
-    }
+    timeOut();
   }
 });
 
@@ -163,11 +163,7 @@ bottomLeft.addEventListener("click", function (event) {
     playerOrder.push(3);
     check();
     three();
-    if (!win) {
-      setTimeout(function () {
-        clearColor();
-      }, 300);
-    }
+    timeOut();
   }
 });
 
@@ -176,11 +172,7 @@ bottomRight.addEventListener("click", function (event) {
     playerOrder.push(4);
     check();
     four();
-    if (!win) {
-      setTimeout(function () {
-        clearColor();
-      }, 300);
-    }
+    timeOut();
   }
 });
 
@@ -188,7 +180,7 @@ function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
 
-  if (playerOrder.length == 20 && good) winGame();
+  if (playerOrder.length == 3 && good) winGame();
 
   if (!good) {
     flashColor();
@@ -200,9 +192,7 @@ function check() {
       if (strict) {
         play();
       } else {
-        computerTurn = true;
-        flash = 0;
-        playerOrder = [];
+        gameState();
         good = true;
         intervalId = setInterval(gameTurn, 800);
       }
@@ -212,14 +202,17 @@ function check() {
 
   if (turn === playerOrder.length && good && !win) {
     turn++;
-    playerOrder = [];
-    computerTurn = true;
-    flash = 0;
+    gameState();
     turnCounter.innerHTML = turn;
     intervalId = setInterval(gameTurn, 800);
   }
 }
 
+function gameState() {
+  computerTurn = true;
+  flash = 0;
+  playerOrder = [];
+}
 function winGame() {
   flashColor();
   turnCounter.innerHTML = "WIN!";
