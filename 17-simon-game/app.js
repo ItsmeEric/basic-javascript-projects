@@ -202,4 +202,13 @@ function check() {
     }, 800);
     noise = false;
   }
+
+  if (turn === playerOrder.length && good && win) {
+    turn++;
+    playerOrder = [];
+    computerTurn = true;
+    flash = 0;
+    turnCounter.innerHTML = turn;
+    intervalId = setInterval(gameTurn, 800);
+  }
 }
