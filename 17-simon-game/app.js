@@ -137,3 +137,42 @@ topLeft.addEventListener("click", function (event) {
     }
   }
 });
+
+topRight.addEventListener("click", function (event) {
+  if (on) {
+    playerOrder.push(2);
+    check();
+    two();
+    if (!win) {
+      setTimeout(function () {
+        clearColor();
+      }, 300);
+    }
+  }
+});
+
+bottomLeft.addEventListener("click", function (event) {
+  if (on) {
+    playerOrder.push(3);
+    check();
+    three();
+    if (!win) {
+      setTimeout(function () {
+        clearColor();
+      }, 300);
+    }
+  }
+});
+
+bottomRight.addEventListener("click", function (event) {
+  if (on) {
+    playerOrder.push(4);
+    check();
+    four();
+    if (!win) {
+      setTimeout(function () {
+        clearColor();
+      }, 300);
+    }
+  }
+});
