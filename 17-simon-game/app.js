@@ -125,6 +125,13 @@ function clearColor() {
   bottomRight.style.backgroundColor = "darkblue";
 }
 
+function flashColor() {
+  topLeft.style.backgroundColor = "lightgreen";
+  topRight.style.backgroundColor = "tomato";
+  bottomLeft.style.backgroundColor = "yellow";
+  bottomRight.style.backgroundColor = "lightskyblue";
+}
+
 topLeft.addEventListener("click", function (event) {
   if (on) {
     playerOrder.push(1);
